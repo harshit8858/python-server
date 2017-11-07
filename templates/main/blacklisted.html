@@ -1,0 +1,24 @@
+{% extends 'base.html' %}
+
+{% block content %}
+
+<style>
+        #welcome-message {
+            text-align: center;
+            color:red;
+            background-color: yellow;
+            font-size: 30px;
+            padding: 5px;
+            font-weight: bold;
+            border-radius: 10px;
+        }
+    </style>
+    
+    <div id="welcome-message">
+            {% for i in black %}
+            <a href="{{ i.list.url }}">BLACKLISTED/ DEBARRED ORGANISATIONS IN NHDO</a>
+        {% endfor %}
+    </div>
+
+
+{% endblock %}

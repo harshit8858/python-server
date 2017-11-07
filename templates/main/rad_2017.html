@@ -1,0 +1,28 @@
+{% extends 'base.html' %}
+
+{% block content %}
+
+<style>
+        .welcome-message {
+            text-align: center;
+            color:red;
+            background-color: yellow;
+            font-size: 30px;
+            padding: 5px;
+            font-weight: bold;
+            border-radius: 10px;
+        }
+    </style>
+    
+<div class="welcome-message"><p>YOU ARE CORDIALLY INVITED </p></div>
+
+<br><br>
+<img width="100%"src='https://i.imgur.com/8T8X5jT.jpg' />
+<br>
+<br>
+<div class="welcome-message"><a href="{{ eve.event.url }}">Exhibition & Sponsership</a></div>
+
+<br>
+<br>
+
+{% endblock %}

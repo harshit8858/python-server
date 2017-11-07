@@ -1,0 +1,76 @@
+{% extends 'base.html' %}
+
+{% block content %}
+
+<style>
+    #welcome-message {
+        text-align: center;
+        color:red;
+        background-color: yellow;
+        font-size: 30px;
+        padding: 5px;
+        font-weight: bold;
+        border-radius: 10px;
+    }
+</style>
+
+<div id="welcome-message"><p>How To Join N.H.D.O.</p></div>
+
+<br>
+
+<div style="width:100%;">
+    <div style="margin: 0 auto; width: 70%;" class="well">
+        <p style="font-size: 20px;">
+            Membership of NHDO shall be open at all times. Any eligible person can become a member subject to his/her fulfilling the eligibility criteria indicated at Para 4 of the General Rules.
+            <br><br>
+            Persons eligible to become members may submit their application in the Membership Application Form at NHDO corporate office, New Delhi.
+            <br><br>
+            Membership fee (as applicable according to the prevailing NHDO General Rules at that time) will have to be paid which shall be non-refundable for all types of dwelling units. It may even be financed (if required by the beneficiary) subject to fulfilment of the terms and conditions.  
+            <br><br>
+            Membership will be granted in terms of Para 6 of General Rules, if the applicant meets the eligibility criteria. The applicant will be allotted a Membership Number in order of receipt of the application in NHDO office. This Membership No. must be used in all correspondance with NHDO and while applying for specific housing schemes.
+        </p>
+    </div>
+
+    <br><br>
+    
+    <div style="margin: 0 auto; width: 60%; background-color:yellow; border: 1px solid black; font-size: 20px;">
+        <ul>
+            <p style="font-size: 30px; font-weight:bold; text-align:center;">GENERAL RULES-Preface</p>
+            <li>Introduction- Para 1</li>
+            <li>Definition    -  Para 2</li>
+            <li>Membership- Paras 3 to 6</li>
+            <li>Demand Survey- Para 7</li>
+            <li>Housing Schemes- Paras 8 to 11</li>
+            
+            <li>Booking & Payment- Paras 12 & 13 </li>
+            <li>Seniority, Allotment & Handing Over- Paras 14 to 17</li>
+            <li>Registration of Dwelling Unit- Para 18</li>
+            <li>Allottee Association- Para 19</li>
+            <li>Withdrawal Rules- Para 20</li>
+            <li>Co-ownership- Para 21</li>
+            
+            <li>Equalization & Delay Charges- Para 22</li>
+            <li>Maintenance & Depreciation Reserve Funds- Paras 23 & 24</li>
+            <li>NHDO's Reserve Fund- Para 25</li>
+            <li>Nomination- Para 26</li>
+            <li>Mutual Exchange, Transfer & Disposal- Paras 27 & 28</li>
+            <li>Loan Facilities & Interest- Paras 29 & 30</li>
+            <li>Delay in Construction- Para 31</li>
+            <li>Change of Address- Para 32</li>
+            
+            <li>Suppression of Information- Para 33</li>
+            <li>Government Rules- Para 34</li>
+            <li>Arbitration & Legal Proceedings- Paras 35 to 38</li>
+            <li>Regarding these Rules- Paras 39 & 40</li>
+            <li>Annexures</li>
+        </ul>
+    </div>
+</div>
+
+
+
+{% for i in member %}
+    <a href="{{ i.file.url }}">Please click here to download the booklet of NHDO General Rules</a>
+{% endfor %}
+
+{% endblock %}

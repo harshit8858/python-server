@@ -1,0 +1,56 @@
+{% extends 'base.html' %}
+
+{% block content %}
+
+<style>
+        #welcome-message {
+            text-align: center;
+            color:red;
+            background-color: yellow;
+            font-size: 30px;
+            padding: 5px;
+            font-weight: bold;
+            border-radius: 10px;
+        }
+    </style>
+    
+    <div id="welcome-message"><p>Archieved Tenders </p></div>
+
+    <img style="width:100%"src='https://i.imgur.com/TKXZOdS.jpg' />
+
+<style>
+        th {
+            padding: 5px;
+            font-size: 25px;
+        }
+        td {
+            padding: 5px;
+            font-size: 20px;
+        }
+    </style>
+
+<table style="position:relative; top: -200px;" border="20px" class="table">
+    <thead>
+            <th>Name</th>
+            <th>Category</th>
+            <th>Department</th>
+            <th>PDF Document</th>
+        </thead>
+    {% for i in ten_ar %}
+        <tr>
+            <td>{{ i.name }}</td>
+            <td>{{ i.category }}</td>
+            <td>{{ i.dept }}</td>
+            <td>
+                {% if i.doc %}
+                    <a href="{{ i.doc.url }}">View</a>
+                {% else %}
+                    -
+                {% endif %}
+            </td>
+            <br/>
+        </tr>
+    {% endfor %}
+</table>
+
+{% endblock %}

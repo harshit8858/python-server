@@ -1,0 +1,101 @@
+{% extends 'base.html' %}
+{% block content %}
+
+<style>
+        .welcome-message {
+            text-align: center;
+            color:red;
+            background-color: yellow;
+            font-size: 30px;
+            padding: 5px;
+            font-weight: bold;
+            border-radius: 10px;
+            display: block;
+        }
+    </style>
+    
+    <div class="welcome-message"><p>Plan Your CAREER & LIFE With N.H.D.O.</p></div>
+
+    <br><br>
+
+<div style="border: 1px solid black; background-color: lightblue; padding: 10px; font-size:20px;">
+        National Housing Development Organisation (NHDO) is engaged in construction of Houses  on'No Profit No Loss' basis as a welfare measure. Its H.Q. is located at New Delhi. Presently the new projects have been launched/being launched all across India with a focus on metro cities to help avail 'Housing For All By 2022'. NHDO needs the services of both fresh and retired( from Railways, Railway PSUs, Central PSUs, MES, CPWD etc.) personals  particularly in construction field at various levels to work in its Corporate Office at New Delhi for planning and facilitating execution of various works as well as in the Field Units to supervise the construction of single storey/multi-storeyed flats in its Projects.      
+</div>
+
+<br><br>
+
+<div style="border: 1px solid black; background-color: #F87444; padding: 10px; font-size:20px; width:80%; margin:0 auto;">
+        The NHDO believes in achieving organizational excellence through training of Human Resource to fulfill the organizational goal. The organisation has set up a well defined system for identifying the training needs of all employees at various level to enhance their skills and knowledge. The purpose of training is to update  departmental official / staff/volunteers with the necessary skills, knowledge latest technology and attitudes to meet the organization's needs in relation to its objectives and fast changes in the global market. Training is seen as a necessary investment in order to provide the excellent services as demanded. To expand and widen the technical & behavioral attributes of employees at the Operative levels, In-house training programs are organized collaboration with various external training agencies as well departmental faculties. These program also enable us to achieve our MoU targets.<br><br>
+        
+        NHDO CONDUCTS IN-HOUSE ORIENTATION TRAINING PROGRAMME FOR NEW RECRUITS<br><br>
+        
+        NHDO Training & Development Division Conducts Orientation Training Programme for new inductees recruited . The programme will held in New Delhi and the participants included categories such as Management Trainees, Junior Engineers/PEs / SPEs & DPMs.<br><br>
+        
+        During this Program, participants are made aware of NHDOs Vision, Mission and also made cognizant how NHDO works in various segments..<br><br>
+        
+        The programme also has outside faculties who covere the following:-<br><br>
+        
+        - Half-day Program on Green Buildings & GRIHA Rating as arranged through TERI, which is a specialized agency.<br><br>
+        
+        - Three-day Program through National Council for Cement & Building Material, Ballabhgarh.<br><br>
+        
+        Participants are also taken for site visit such as to East Kidwai Nagar Project to experience the practical working at site.
+</div>
+
+<br><br>
+
+<div style="border: 1px solid black; background-color: lightblue; padding: 10px; font-size:15px; width:40%; float:left; margin: 3%">
+    An Opportunity to join FFI as   Volunteer:<br><br>
+    
+    
+    Have an exciting Volunteer experience with FFI for implementation of HOUSING FOR ALL BY 2022 and other welfare schemes of Govt. Of India.<br><br>
+    
+    Please review the below volunteer roles for one that suits your skills. If there is nothing that suits your specific interest, don’t hesitate to apply anyways. FFI’s volunteer roles are always evolving.<br><br>
+    
+    Current Volunteer Vacancies:<br>
+    - AWAS MITRA,<br>
+    - BANK MITRA,<br>
+    - SIKSHA MITRA,<br>
+    - UDYOG MITRA,<br>
+    - HR Volunteer,<br>
+    - Health care Volunteer,<br>
+    - Fund Raising Volunteer,<br>
+    - Impact Assessment Volunteer,<br>
+    - PR Volunteer,<br>
+    - Marketing Volunteer,<br>
+    - Programs Documentation Volunteer,<br>
+    - Rural Improvement Volunteer  etc.<br><br>
+    
+    Please send your CV/Resume to <a href="mailto:hr@nhdoindia.org">hr@nhdoindia.org</a> and hr.nhdoindia@gmail.com . 
+</div>
+
+<form method="post" enctype="multipart/form-data" style="width:40%; float:left; margin: 3%; border: 1px solid black; background-color: lightyellow; padding: 5px;">
+    {% csrf_token %}
+    {% for field in form %}
+        <p >
+            {{ field.label_tag }}
+            {{ field }}
+            {% if field.help_text %}
+                <small style="color: grey">{{ field.help_text }}</small>
+            {% endif %}
+
+            {% for error in field.errors %}
+              <p style="color: red">{{ error }}</p>
+            {% endfor %}
+        </p>
+    {% endfor %}
+    <button type="submit" class="btn btn-success">Submit</button>
+
+</form>
+<div style="clear: both;"></div>
+
+<br><br>
+{% for i in oppo %}
+    {% if i.file %}
+        <a class="welcome-message" href="{{ i.file.url }}">An Opportunity to join NHDO as Management Trainees (Administration/
+                Technical) – 675</a>
+    {% endif %}
+{% endfor %}
+
+<br><br>
+{% endblock %}
